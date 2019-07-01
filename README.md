@@ -95,10 +95,10 @@
 6. To get the twelve rows, you must have used one of the constructions `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, or `FULL JOIN`. How many rows would the other three have returned? First try to think of the answers and then verify them by running the queries (it’s important you understand the results). Put the numbers below:
 
     ```
-    INNER JOIN: ? rows
-    LEFT JOIN: ? rows
-    RIGHT JOIN: ? rows
-    FULL JOIN: ? rows
+    INNER JOIN: 11 rows
+    LEFT JOIN: 12 rows
+    RIGHT JOIN: 13 rows
+    FULL JOIN: 14 rows
     ```
 
 7. Imagine you’re using pagination to display articles showing five articles per page. Retrieve the content for the first page: create a query that would return the latest five articles, ordered from the latest to the earliest.
