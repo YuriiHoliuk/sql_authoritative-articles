@@ -78,7 +78,18 @@
 5. Retrieve articles with the information about the author attached to each row (there should be 12 rows in the result and around 10 columns, including the article’s title, text, rating, and date as well as the author’s name and sex):
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT
+           articles.id,
+           articles.title,
+           authors.id author_id,
+           (authors.first_name || ' ' || authors.last_name) author_name,
+           authors.sex author_sex,
+           articles.date,
+           articles.rating,
+           articles.text
+    FROM
+         articles
+    LEFT JOIN authors on articles.author = authors.id;
     ```
 
 6. To get the twelve rows, you must have used one of the constructions `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, or `FULL JOIN`. How many rows would the other three have returned? First try to think of the answers and then verify them by running the queries (it’s important you understand the results). Put the numbers below:
