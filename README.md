@@ -28,7 +28,17 @@
 2. **Manually** create a query or a series of queries filling the table with the data. Put the query/queries below:
 
     ```postgresql
-    INSERT ...
+    INSERT INTO authors(first_name, last_name, sex)
+    VALUES
+        ('Abi', 'Maxwell', 'f'),
+        ('Anthony', 'Alofsin', 'm'),
+        ('Emily', 'Temple', 'f'),
+        ('Gabrielle', 'Bellot', 'f'),
+        ('Meg', 'Donohue', 'f'),
+        ('Philip', 'Eil', 'm'),
+        ('Roxana', 'Robinson', 'f'),
+        ('Tobias', 'Carroll', 'm'),
+        ('Veronica', 'Esposito', 'f');
     ```
 
 3. Using the client, design and create a table called `articles` that would store the information from the file [articles.xlsx](articles.xlsx). Use the already created `authors` table in order to refer to the authors. Don’t forget to create an ID field and all necessary constraints/keys/indices.
