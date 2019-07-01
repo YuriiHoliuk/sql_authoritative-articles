@@ -104,7 +104,7 @@
 7. Imagine you’re using pagination to display articles showing five articles per page. Retrieve the content for the first page: create a query that would return the latest five articles, ordered from the latest to the earliest.
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT * FROM articles ORDER BY date DESC LIMIT 5;
     ```
 
 8. Retrieve the content for the second page: articles 6 through 10 (still assuming chronological order).
