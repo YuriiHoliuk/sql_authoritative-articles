@@ -122,7 +122,7 @@
 10. Count the number of five-article pages required to accommodate all articles:
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT ceil(count(*)::decimal / 5) FROM articles;
     ```
     
 11. Calculate an average rating of the articles, rounded to the nearest integer:
