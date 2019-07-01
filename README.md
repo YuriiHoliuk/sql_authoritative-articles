@@ -116,7 +116,7 @@
 9. Retrieve the content for the third page: articles 11 through 15 (never mind there are actually only 12 of them currently in the table).
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT * FROM articles ORDER BY date DESC LIMIT 5 OFFSET 10;
     ```
     
 10. Count the number of five-article pages required to accommodate all articles:
