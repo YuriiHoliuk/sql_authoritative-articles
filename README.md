@@ -134,7 +134,10 @@
 12. Count males and females among the authors. There should be two rows (for males and females) and two columns: `sex` (`F` or `M`) and `cnt` (count).
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT sex, count(*) FROM authors WHERE sex = 'm' GROUP BY sex
+    UNION (
+        SELECT sex, count(*) FROM authors WHERE sex = 'f' GROUP BY sex
+    );
     ```
 
 13. Find the date of the earliest (put in the column `earliest`) and latest (put in the column `latest`) article written by each author:
