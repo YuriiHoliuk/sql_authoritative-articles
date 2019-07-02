@@ -128,7 +128,7 @@
 11. Calculate an average rating of the articles, rounded to the nearest integer:
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT round(avg(rating)) FROM articles;
     ```
 
 12. Count males and females among the authors. There should be two rows (for males and females) and two columns: `sex` (`F` or `M`) and `cnt` (count).
