@@ -143,7 +143,13 @@
 13. Find the date of the earliest (put in the column `earliest`) and latest (put in the column `latest`) article written by each author:
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT
+           (authors.first_name || ' ' || authors.last_name) AS name,
+           min(articles.date) earliest,
+           max(articles.date) latest
+    FROM authors
+    LEFT JOIN articles ON authors.id = articles.author
+    GROUP BY name;
     ```
     
 14. Calculate the total length of the text written by each author (count both `text` and `title`; you can keep the tags in `text` while counting):
