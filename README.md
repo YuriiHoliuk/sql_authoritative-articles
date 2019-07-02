@@ -176,7 +176,10 @@
 16. "Anonymize" the authors: replace each author’s last name with the properly capitalized reverse of it. E.g., `Alofsin` should become `Nisfola`, `Esposito` should become `Otisopse`, etc.
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT
+           first_name,
+           initcap(reverse(lower(last_name))) last_name
+    FROM authors;
     ```
     
 17. Delete all articles that don’t have an author:
