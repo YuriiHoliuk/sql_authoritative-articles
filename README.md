@@ -155,7 +155,13 @@
 14. Calculate the total length of the text written by each author (count both `text` and `title`; you can keep the tags in `text` while counting):
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT
+           (authors.first_name || ' ' || authors.last_name) AS name,
+           sum(length(articles.title)) title_length,
+           sum(length(articles.text)) text_length
+    FROM authors
+    LEFT JOIN articles ON authors.id = articles.author
+    GROUP BY name;
     ```
     
 15. Output all the authors in a random order. There should be only one column aliased `author` with the first and last name of the author concatenated (using a space, of course). The order of the rows should be different on each request:
