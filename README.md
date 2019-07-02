@@ -185,7 +185,8 @@
 17. Delete all articles that don’t have an author:
 
     ```postgresql
-    ... here goes your SQL ...
+    DELETE FROM articles
+    WHERE author IS NULL;
     ```
 
 18. **(optional)** Delete all authors that haven’t written any articles:
