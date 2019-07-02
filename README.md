@@ -167,7 +167,10 @@
 15. Output all the authors in a random order. There should be only one column aliased `author` with the first and last name of the author concatenated (using a space, of course). The order of the rows should be different on each request:
 
     ```postgresql
-    ... here goes your SQL ...
+    SELECT
+        (first_name || ' ' || last_name) AS author
+    FROM authors
+    ORDER BY random();
     ```
 
 16. "Anonymize" the authors: replace each author’s last name with the properly capitalized reverse of it. E.g., `Alofsin` should become `Nisfola`, `Esposito` should become `Otisopse`, etc.
