@@ -192,7 +192,11 @@
 18. **(optional)** Delete all authors that haven’t written any articles:
 
     ```postgresql
-    ... here goes your SQL ...
+    DELETE FROM authors
+    WHERE NOT EXISTS (
+        SELECT 1 FROM articles
+        WHERE authors.id = articles.author
+    );
     ```
 
 Don’t forget to create a pull request.
